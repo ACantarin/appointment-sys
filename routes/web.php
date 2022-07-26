@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/specialties", [SpecialtyController::class, "index"]);
+Route::get("/specialties", ["as" => "specialties.index", "uses" => "App\Http\Controllers\SpecialtyController@index"]);
 Route::post("/specialties/save", [SpecialtyController::class, "store"]);
 Route::get("/specialties/add",["as" => "specialties.add", "uses" => "App\Http\Controllers\SpecialtyController@add"]);
 Route::get("/specialties/save",["as" => "specialties.save", "uses" => "App\Http\Controllers\SpecialtyController@store"]);
