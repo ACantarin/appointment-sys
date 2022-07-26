@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Validators\SpecialtyValidator;
 use App\Services\SpecialtyService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SpecialtyController extends Controller
 {
@@ -14,6 +15,8 @@ class SpecialtyController extends Controller
 
     public function store(Request $request) {
         try {
+            DB::beginTransaction();
+
             SpecialtyValidator::validateStore($request);
 
             $request = $request->all();
@@ -21,8 +24,11 @@ class SpecialtyController extends Controller
             $specialtyService = new SpecialtyService();
             $specialtyService->store($request);
 
-            return json_encode(["success" => true, "data" => "Especialidade salva com sucesso"]);
+            DB::commit();
+
+            return redirect("specialties");
         } catch (\Exception $exception) {
+            DB::rollBack();
             return json_encode(["success" => false, "message" => $exception->getMessage()]);
         }
     }
