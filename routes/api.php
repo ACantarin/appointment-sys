@@ -20,9 +20,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::post('/testPatient', [PatientController::class, "store"]);
-Route::post('/testLegalResponsible', [LegalResponsibleController::class, "store"]);
-Route::get('/zip_code/{zip_code}', [AddressController::class, "show"]);
-Route::get('/zip_code/{zip_code}', [AddressController::class, "show"]);
-
