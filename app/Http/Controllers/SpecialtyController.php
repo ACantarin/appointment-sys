@@ -7,8 +7,8 @@ use App\Services\SpecialtyService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class SpecialtyController extends Controller
-{
+class SpecialtyController extends Controller {
+
     public function add() {
         return view("specialty.add");
     }
@@ -26,10 +26,10 @@ class SpecialtyController extends Controller
 
             DB::commit();
 
-            return redirect("specialties");
+            return redirect("specialties")->with("alert", "Especialidade salva com sucesso");
         } catch (\Exception $exception) {
             DB::rollBack();
-            return json_encode(["success" => false, "message" => $exception->getMessage()]);
+            return redirect("specialties")->with("alert", $exception->getMessage());
         }
     }
 
