@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="container">
-        <h3 class="center">Lista de Médicos</h3>
+        <h3 class="center">Médicos</h3>
     @if(!$doctors)
         <h4 class="center grey">Nenhum médico cadastrado</h4>
     @else

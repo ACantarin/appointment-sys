@@ -4,7 +4,7 @@
 
 @section("content")
     <div class="container">
-        <h3 class="center">Lista de Pacientes</h3>
+        <h3 class="center">Pacientes</h3>
         <div class="center add-button-wrapper">
             <a class="center btn green" href="#">Adicionar</a>
         </div>
