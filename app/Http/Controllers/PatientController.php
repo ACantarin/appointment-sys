@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller {
+
+    public function add() {
+        return view("patient.add");
+    }
     
     public function index() {
         $patientService = new PatientService();
