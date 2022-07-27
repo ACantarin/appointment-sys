@@ -39,7 +39,7 @@ class DoctorController extends Controller {
 
             DB::commit();
 
-            return json_encode(["success" => true, "data" => "Médico salvo com sucesso"]);
+            return redirect("doctors")->with("alert", "Médico salvo com sucesso");
         } catch (\Exception $exception) {
             DB::rollBack();
             return json_encode(["success" => false, "message" => $exception->getMessage()]);
