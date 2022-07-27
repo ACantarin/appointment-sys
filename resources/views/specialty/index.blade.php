@@ -3,12 +3,6 @@
 @section("title","Especialidades")
 
 @section("content")
-    <script>
-        var message = "{{Session::get('alert')}}";
-        if (message) {
-            alert(message);
-        }
-    </script>
     <div class="container">
         <h3 class="center">Especialidades</h3>
         <div class="center add-button-wrapper">
