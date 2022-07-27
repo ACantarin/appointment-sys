@@ -4,8 +4,8 @@
       $(document).ready(function(){
         M.updateTextFields();
         $('.sidenav').sidenav();
+        $('select').formSelect();
       });
     </script>
-
   </body>
 </html>
