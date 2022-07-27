@@ -20,6 +20,10 @@ Route::get("/specialties", ["as" => "specialties.index", "uses" => "App\Http\Con
 Route::get("/specialties/add",["as" => "specialties.add", "uses" => "App\Http\Controllers\SpecialtyController@add"]);
 Route::get("/specialties/save",["as" => "specialties.save", "uses" => "App\Http\Controllers\SpecialtyController@store"]);
 
+Route::get("/appointments", ["as" => "appointments.index", "uses" => "App\Http\Controllers\AppointmentController@index"]);
+Route::get("/appointments/add",["as" => "appointments.add", "uses" => "App\Http\Controllers\AppointmentController@add"]);
+Route::post("/appointments/save",["as" => "appointments.save", "uses" => "App\Http\Controllers\AppointmentController@store"]);
+
 Route::get("/doctors", ["as" => "doctors.index", "uses" => "App\Http\Controllers\DoctorController@index"]);
 Route::get("/doctors/add",["as" => "doctors.add", "uses" => "App\Http\Controllers\DoctorController@add"]);
 Route::post("/doctors/save",["as" => "doctors.save", "uses" => "App\Http\Controllers\DoctorController@store"]);
