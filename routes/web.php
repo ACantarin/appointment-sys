@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/specialties", ["as" => "specialties.index", "uses" => "App\Http\Controllers\SpecialtyController@index"]);
 Route::get("/specialties/add",["as" => "specialties.add", "uses" => "App\Http\Controllers\SpecialtyController@add"]);
-Route::get("/specialties/save",["as" => "specialties.save", "uses" => "App\Http\Controllers\SpecialtyController@store"]);
+Route::post("/specialties/save",["as" => "specialties.save", "uses" => "App\Http\Controllers\SpecialtyController@store"]);
 
 Route::get("/appointments", ["as" => "appointments.index", "uses" => "App\Http\Controllers\AppointmentController@index"]);
 Route::get("/appointments/add",["as" => "appointments.add", "uses" => "App\Http\Controllers\AppointmentController@add"]);
