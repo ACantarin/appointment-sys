@@ -19,9 +19,7 @@ class PatientValidator {
             "age" => ["required", new LegalResponsibleRequired($request)]
         ], self::messages());
 
-        if ($validator->fails()) {
-            dd($validator->getMessageBag());
-        }
+        if ($validator->fails()) throw new \Exception($validator->getMessageBag()->first());
     }
 
     private function messages() {

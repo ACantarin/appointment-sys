@@ -14,9 +14,7 @@ class DoctorValidator {
             "specialty_id" => "required",
         ], self::messages());
 
-        if ($validator->fails()) {
-            dd($validator->getMessageBag());
-        }
+        if ($validator->fails()) throw new \Exception($validator->getMessageBag()->first());
     }
 
     private function messages() {
