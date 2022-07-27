@@ -6,7 +6,7 @@
     <div class="container">
     <h3 class="center">Adicionar Médico</h3>
     <div class="row">
-        <form class="" action="#" method="post" enctype="multipart/form-data">
+        <form class="" action="{{ route('doctors.save') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         @include("doctor.form")
         <button class="btn deep-orange">Salvar</button>
