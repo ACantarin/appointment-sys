@@ -6,7 +6,7 @@
     <div class="container">
         <h3 class="center">Pacientes</h3>
         <div class="center add-button-wrapper">
-            <a class="center btn green" href="#">Adicionar</a>
+            <a class="center btn green" href="{{ route('patients.add') }}">Adicionar</a>
         </div>
     @if(!$patients)
         <h4 class="center grey">Nenhum paciente cadastrado</h4>   
