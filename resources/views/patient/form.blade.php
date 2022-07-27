@@ -9,8 +9,20 @@
 </div>
 
 <div class="input-field">
-  <input type="text" name="age" id="js-patient-age" value="{{ isset($patient->age) ? $patient->age : '' }}">
+  <input type="number" min="0" max="120" name="age" id="js-patient-age" value="{{ isset($patient->age) ? $patient->age : '' }}">
   <label>Idade</label>
+</div>
+
+<div id="js-legal-responsible-data" hidden>
+  <div class="input-field">
+    <input type="text" name="legal-responsible-name" id="js-legal-responsible-name">
+    <label>Responsável</label>
+  </div>
+
+  <div class="input-field">
+    <input type="text" name="legal-responsible-document" id="js-legal-responsible-document">
+    <label>CPF do responsável</label>
+  </div>
 </div>
 
 <div class="input-field">
