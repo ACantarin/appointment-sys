@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Appointment extends Model {
 
     protected $fillable = [
-        "date"
+        "date", "patient_id", "doctor_id"
     ];
 
     public function patient() {
-        return $this->hasOne(Patient::class);
+        return Patient::find($this->patient_id);
     }
 
     public function doctor() {
-        return $this->hasOne(Doctor::class);
+        return Doctor::find($this->doctor_id);
     }
 }
