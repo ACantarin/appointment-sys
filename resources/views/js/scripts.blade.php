@@ -5,9 +5,22 @@
         $('select').formSelect();
 
         var message = "{{Session::get('alert')}}";
+
         if (message) {
             alert(message);
         }
+
+        $("#js-patient-age").on("change", function () {
+            if (Number(this.value) < 18) {
+                $("#js-legal-responsible-data").removeAttr("hidden");
+                $("#js-legal-responsible-name").prop("required", true);
+                $("#js-legal-responsible-document").prop("required", true);
+            } else {
+                $("#js-legal-responsible-data").prop("hidden", true);
+                $("#js-legal-responsible-name").prop("required", false);
+                $("#js-legal-responsible-document").prop("required", false);
+            }
+        });
 
         var baseApiUrl = "http://127.0.0.1:8000/api";
 
