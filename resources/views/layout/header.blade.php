@@ -1,4 +1,4 @@
-<html>
+<html lang="pt-BR">
   <head>
     <title>@yield("title", "Consultas")</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
