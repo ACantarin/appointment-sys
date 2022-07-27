@@ -11,6 +11,6 @@ class Doctor extends Model {
     ];
 
     public function specialty() {
-        return $this->hasOne(Specialty::class);
+        return Specialty::find($this->specialty_id);
     }
 }
