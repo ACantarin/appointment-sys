@@ -9,7 +9,7 @@
 </div>
 
 <div class="input-field">
-    <select>
+    <select name="specialty_id">
         @foreach($specialties as $specialty)
             <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
         @endforeach
