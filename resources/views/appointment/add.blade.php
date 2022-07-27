@@ -1,6 +1,6 @@
 @extends("layout.system")
 
-@section("titulo","Consultas")
+@section("title","Consultas")
 
 @section("content")
     <div class="container">
