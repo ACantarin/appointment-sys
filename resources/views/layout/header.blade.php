@@ -22,7 +22,7 @@
       <a href="#" class="brand-logo">Controle de Consultas</a>
       <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Consultas</a></li>
+        <li><a href="{{ route('appointments.index') }}">Consultas</a></li>
         <li><a href="{{ route('patients.index') }}">Pacientes</a></li>
         <li><a href="{{ route('doctors.index') }}">Médicos</a></li>
         <li><a href="{{ route('specialties.index') }}">Especialidades</a></li>
