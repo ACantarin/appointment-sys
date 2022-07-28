@@ -1,10 +1,10 @@
 <div class="input-field">
-  <input type="text" name="name" value="{{ isset($doctor->name) ? $doctor->name : '' }}" required>
+  <input type="text" name="name" required>
   <label>Nome</label>
 </div>
 
 <div class="input-field">
-  <input type="text" name="register_number" value="{{ isset($doctor->register_number) ? $doctor->register_number : '' }}" required>
+  <input type="text" name="register_number" required>
   <label>CRM</label>
 </div>
 
