@@ -83,7 +83,7 @@
                     }                   
                 },
                 fail: function () {
-                    alert("Erro ao buscar o CPF da base de dados");
+                    alert("Erro ao buscar o CRM da base de dados");
                 }
             });
         });
