@@ -10,6 +10,30 @@
             alert(message);
         }
 
+        var baseApiUrl = "http://127.0.0.1:8000/api";
+
+        $("#js-patient-document").on("change", function () {
+            $.ajax({
+                url: baseApiUrl + "/patients/document/" + this.value,
+                type: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.success == true) {
+                        if (response.data) {
+                            alert("O CPF informado já existe na base");
+                            $("#js-patient-document").val("");
+                        }                        
+                    } else {
+                        alert(response.message);
+                        $("#js-patient-document").val("");
+                    }                   
+                },
+                fail: function () {
+                    alert("Erro ao buscar o CPF da base de dados");
+                }
+            });
+        });
+
         $("#js-patient-age").on("change", function () {
             if (Number(this.value) < 18) {
                 $("#js-legal-responsible-data").removeAttr("hidden");
@@ -22,15 +46,12 @@
             }
         });
 
-        var baseApiUrl = "http://127.0.0.1:8000/api";
-
         $("#js-patient-zip-code").on("change", function () {
             $.ajax({
                 url: baseApiUrl + "/address/" + this.value,
                 type: "GET",
                 dataType: "json",
                 success: function(response) {
-                    console.log(response.data);
                     if (response.success == true) {
                         $("#js-patient-address").val(response.data.logradouro);
                     } else {
@@ -43,6 +64,5 @@
                 }
             });
         });
-
     });
 </script>
