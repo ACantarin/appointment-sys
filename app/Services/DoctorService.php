@@ -11,6 +11,10 @@ class DoctorService {
         return Doctor::all();
     }
 
+    public function getDoctorByRegisterNumber(string $registerNumber) {
+        return Doctor::where("register_number", $registerNumber)->get();
+    }
+
     public function store(array $request) {
         $doctor = $this->buildDoctor($request);
         Doctor::create($doctor);

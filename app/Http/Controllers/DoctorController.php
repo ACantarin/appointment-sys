@@ -17,6 +17,17 @@ class DoctorController extends Controller {
 
         return view("doctor.add", compact("specialties"));
     }
+
+    public function getRegisterNumber(Request $request) {
+        try {
+            $doctorService = new DoctorService();
+            $doctor = $doctorService->getDoctorByRegisterNumber($request->register_number)->all();
+    
+            return json_encode(["success" => true, "data" => $doctor ?? null]);
+        } catch (\Exception $exception) {
+            return json_encode(["success" => false, "message" => "Houve um erro desconhecido"]);
+        }
+    }
     
     public function index() {
         $doctorService = new DoctorService();

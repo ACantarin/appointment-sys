@@ -19,7 +19,7 @@
                 dataType: "json",
                 success: function(response) {
                     if (response.success == true) {
-                        if (response.data) {
+                        if (response.data[0]) {
                             alert("O CPF informado já existe na base");
                             $("#js-patient-document").val("");
                         }                        
@@ -61,6 +61,29 @@
                 },
                 fail: function () {
                     alert("Erro ao buscar o endereço");
+                }
+            });
+        });
+
+        $("#js-doctor-register-number").on("change", function () {
+            $.ajax({
+                url: baseApiUrl + "/doctors/register-number/" + this.value,
+                type: "GET",
+                dataType: "json",
+                success: function(response) {
+                    if (response.success == true) {
+                        console.log(response.data[0]);
+                        if (response.data[0]) {
+                            alert("O CRM informado já existe na base");
+                            $("#js-doctor-register-number").val("");
+                        }                        
+                    } else {
+                        alert(response.message);
+                        $("#js-doctor-register-number").val("");
+                    }                   
+                },
+                fail: function () {
+                    alert("Erro ao buscar o CPF da base de dados");
                 }
             });
         });
