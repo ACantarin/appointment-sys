@@ -4,7 +4,7 @@
 </div>
 
 <div class="input-field">
-  <input type="text" name="register_number" required>
+  <input type="text" name="register_number" id="js-doctor-register-number" required>
   <label>CRM</label>
 </div>
 
