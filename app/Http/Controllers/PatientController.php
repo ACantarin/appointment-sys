@@ -12,6 +12,17 @@ class PatientController extends Controller {
     public function add() {
         return view("patient.add");
     }
+
+    public function getDocument(Request $request) {
+        try {
+            $patientService = new PatientService();
+            $patient = $patientService->getPatientByDocument($request->document)->all();
+    
+            return json_encode(["success" => true, "data" => $patient ?? null]);
+        } catch (\Exception $exception) {
+            return json_encode(["success" => false, "message" => "Houve um erro desconhecido"]);
+        }
+    }
     
     public function index() {
         $patientService = new PatientService();
@@ -34,10 +45,10 @@ class PatientController extends Controller {
 
             DB::commit();
 
-            return json_encode(["success" => true, "data" => "Paciente salvo com sucesso"]);
+            return redirect("patients")->with("alert", "Paciente salvo com sucesso");
         } catch (\Exception $exception) {
             DB::rollBack();
-            return json_encode(["success" => false, "message" => $exception->getMessage()]);
+            return redirect("patients")->with("alert", $exception->getMessage());
         }
     }
 }

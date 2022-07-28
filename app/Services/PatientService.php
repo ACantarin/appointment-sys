@@ -10,6 +10,10 @@ class PatientService {
         return Patient::all();
     }
 
+    public function getPatientByDocument(string $document) {
+        return Patient::where("document", $document)->get();
+    }
+
     public function store(array $request) {
         $patient = $this->buildPatient($request);
         Patient::create($patient);
@@ -24,13 +28,8 @@ class PatientService {
         $patient["zip_code"] = $request["zip_code"];
         $patient["address"] = $request["address"];
         $patient["address_number"] = $request["address_number"];
-
-        if ($request["legal_responsible_id"]) {
-            $legalResponsible = LegalResponsibleService::get($request["legal_responsible_id"]);
-            if (!$legalResponsible) throw new \Exception("O responsável informado é inválido");
-
-            $patient["legal_responsible_id"] = $legalResponsible->id;
-        }
+        $patient["legal_responsible_name"] = $request["legal_responsible_name"] ?? null;
+        $patient["legal_responsible_document"] = $request["legal_responsible_document"] ?? null;
 
         return $patient;
     }
