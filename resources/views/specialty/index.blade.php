@@ -16,17 +16,12 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($specialties as $specialty)
                     <tr>
                         <td>{{ $specialty->name }}</td>
-                        <td>
-                            <a class="btn blue" href="#">Editar</a>
-                            <a class="btn red" href="#">Deletar</a>
-                        </td>
                     </tr>
                     @endforeach        
                 </tbody>

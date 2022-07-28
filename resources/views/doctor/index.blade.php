@@ -18,7 +18,6 @@
                         <th>Nome</th>
                         <th>CRM</th>
                         <th>Especialidade</th>
-                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,10 +26,6 @@
                         <td>{{ $doctor->name }}</td>
                         <td>{{ $doctor->register_number }}</td>
                         <td>{{ $doctor->specialty()->name }}</td>
-                        <td>
-                        <a class="btn blue" href="#">Editar</a>
-                        <a class="btn red" href="#">Deletar</a>
-                        </td>
                     </tr>
                     @endforeach        
                 </tbody>

@@ -18,7 +18,6 @@
                         <th>Data</th>
                         <th>Paciente</th>
                         <th>Médico</th>
-                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,10 +26,6 @@
                         <td>{{ $appointment->date }}</td>
                         <td>{{ $appointment->patient()->name }}</td>
                         <td>{{ $appointment->doctor()->name }}</td>
-                        <td>
-                        <a class="btn blue" href="#">Editar</a>
-                        <a class="btn red" href="#">Deletar</a>
-                        </td>
                     </tr>
                     @endforeach        
                 </tbody>

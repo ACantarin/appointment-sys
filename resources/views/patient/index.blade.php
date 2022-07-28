@@ -18,7 +18,6 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>E-Mail</th>
-                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,10 +26,6 @@
                         <td>{{ $patient->name }}</td>
                         <td>{{ $patient->document }}</td>
                         <td>{{ $patient->email }}</td>
-                        <td>
-                        <a class="btn blue" href="#">Editar</a>
-                        <a class="btn red" href="#">Deletar</a>
-                        </td>
                     </tr>
                     @endforeach        
                 </tbody>
