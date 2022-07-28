@@ -15,7 +15,11 @@ class LegalResponsibleRequired implements Rule {
     }
 
     public function passes($attribute, $value) {
-        return $value > 18 || $this->legalResponsibleDocument !== "";
+        if ($value > 18) return true;
+
+        if ($this->legalResponsibleDocument !== "") return true;
+
+        return false;
     }
 
     public function message() {
